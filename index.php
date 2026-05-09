@@ -2,6 +2,10 @@
 
 namespace App;
 
+use function session_start;
+use function session_unset;
+use function password_verify;   // in case it's used elsewhere
+use function random_bytes;
 // Error reporting
 error_reporting(E_ALL); 
 ini_set('ignore_repeated_errors', TRUE); 
@@ -45,7 +49,7 @@ if((isset($_GET['job']) && $_GET['job'] === substr(hash('sha256', Config::PASSWO
 
 
 // Start check user session
-session_start();
+\session_start();
 $passToken = hash('sha256', Config::PASSWORD."ibe81rn6");
 
 // Active Session

@@ -128,7 +128,7 @@ class jsonRPCClient
         // If there was no error, this will be an empty string
         $curl_error = curl_error($curl);
 
-        curl_close($curl);
+        //curl_close($curl);
         if(false){
           echo $this->raw_response;
           echo $this->status;
